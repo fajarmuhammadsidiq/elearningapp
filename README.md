@@ -1,6 +1,6 @@
 # elearning_app
 
-A new Flutter project.
+Project e learning berbasis mobile di flutter dengan Firebase
 
 ## Getting Started
 
