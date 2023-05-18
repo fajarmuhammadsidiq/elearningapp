@@ -20,15 +20,15 @@ class IntroductionScreen extends StatelessWidget {
             children: [
               const Icon(
                 Icons.star,
-                color: Colors.white,
                 size: 65,
               ),
               SizedBox(
                 height: 30,
               ),
               const Text(
+                textAlign: TextAlign.center,
                 "E learning App , Aplikasi Belajar yang Mudah ",
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(fontSize: 18, color: onSurfaceTextColor),
               ),
               SizedBox(
                 height: 30,
