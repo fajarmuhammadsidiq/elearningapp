@@ -31,9 +31,6 @@ class QuestionPaperModel {
     data['image_url'] = imageUrl;
     data['Description'] = description;
     data['time_seconds'] = timeSeconds;
-    if (questions != null) {
-      data['questions'] = questions!.map((v) => v.toJson()).toList();
-    }
     return data;
   }
 }
