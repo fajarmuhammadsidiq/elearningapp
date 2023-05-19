@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../configs/themes/app_colors.dart';
-import 'appcircle_button.dart';
+import '../../widget/appcircle_button.dart';
 
 class IntroductionScreen extends StatelessWidget {
   const IntroductionScreen({super.key});
@@ -22,7 +22,7 @@ class IntroductionScreen extends StatelessWidget {
                 Icons.star,
                 size: 65,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               const Text(
@@ -30,16 +30,16 @@ class IntroductionScreen extends StatelessWidget {
                 "E learning App , Aplikasi Belajar yang Mudah ",
                 style: TextStyle(fontSize: 18, color: onSurfaceTextColor),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
-              AppCircleButton(
-                onTap: () {},
-                child: Icon(
-                  Icons.arrow_forward_outlined,
-                  size: 35,
-                ),
-              )
+              IconButton(
+                  onPressed: () => Get.offAllNamed("/home"),
+                  icon: Icon(
+                    Icons.arrow_forward_outlined,
+                    color: Colors.white,
+                    size: 40,
+                  ))
             ],
           ),
         ),
