@@ -1,5 +1,6 @@
 import 'package:elearning_app/configs/themes/ui_parameters.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'app_dark.dart';
 import 'app_light.dart';
@@ -15,8 +16,8 @@ const mainGradientDark = LinearGradient(
     end: Alignment.bottomRight,
     colors: [primaryDarkColorDark, primaryColorDark]);
 
-LinearGradient mainGradient(BuildContext context) =>
-    UIParameters.isDarkMode() ? mainGradientDark : mainGradientLight;
+LinearGradient mainGradient() =>
+    Get.isDarkMode ? mainGradientDark : mainGradientLight;
 Color customScaffoldColor(BuildContext context) => UIParameters.isDarkMode()
     ? Color(0xFF2E3C62)
     : Color.fromARGB(255, 240, 237, 255);

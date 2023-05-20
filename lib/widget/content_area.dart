@@ -13,7 +13,7 @@ class ContentArea extends StatelessWidget {
       type: MaterialType.transparency,
       clipBehavior: Clip.hardEdge,
       borderRadius: BorderRadius.vertical(
-        top: Radius.circular(10),
+        top: Radius.circular(20),
       ),
       child: Ink(
         child: child,
