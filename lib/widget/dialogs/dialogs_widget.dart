@@ -8,18 +8,22 @@ class Dialogs {
     return _singleton;
   }
 
-  static Widget questionStartDialogue({required VoidCallback onTap}) {
+  static Widget questionStartDialogue({
+    String? title,
+    String? subtitle,
+    required VoidCallback onTap,
+  }) {
     return AlertDialog(
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Hi..",
+            title!,
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
           Text(
-            "Please Login before you start",
+            subtitle!,
             style: TextStyle(),
           )
         ],

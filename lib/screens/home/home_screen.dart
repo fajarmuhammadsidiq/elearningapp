@@ -20,7 +20,7 @@ import 'menu_screen.dart';
 
 class HomeScreen extends GetView<MyZoomDrawerController> {
   const HomeScreen({super.key});
-
+  static const String routeName = "/home";
   @override
   Widget build(BuildContext context) {
     QuestionPaperController _questionPaperController = Get.find();
@@ -31,7 +31,7 @@ class HomeScreen extends GetView<MyZoomDrawerController> {
           menuScreenOverlayColor: Color.fromARGB(255, 103, 179, 241),
           menuScreenWidth: double.maxFinite,
           drawerShadowsBackgroundColor: Colors.white,
-          slideWidth: MediaQuery.of(context).size.width * 0.6,
+          slideWidth: MediaQuery.of(context).size.width * 0.7,
           style: DrawerStyle.defaultStyle,
           angle: 0,
           borderRadius: 24,

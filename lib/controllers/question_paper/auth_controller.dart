@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import '../../screens/home/home_screen.dart';
 import '../../screens/login/login_screen.dart';
 
 class AuthController extends GetxController {
@@ -42,10 +43,16 @@ class AuthController extends GetxController {
             accessToken: _authAccount.accessToken);
         await auth.signInWithCredential(_credential);
         await saveUser(account);
+        navigateToHomePage();
       }
     } on Exception catch (error) {
       print(error);
     }
+  }
+
+  User? getUser() {
+    _user.value = auth.currentUser;
+    return _user.value;
   }
 
   saveUser(GoogleSignInAccount account) {
@@ -61,10 +68,15 @@ class AuthController extends GetxController {
   }
 
   void showLoginAlertDialogue() {
-    Get.dialog(Dialogs.questionStartDialogue(onTap: () {
-      Get.back();
-      navigateToLoginPage();
-    }), barrierDismissible: false);
+    Get.dialog(
+        Dialogs.questionStartDialogue(
+            onTap: () {
+              Get.back();
+              navigateToLoginPage();
+            },
+            title: "Hai..",
+            subtitle: "must login before start"),
+        barrierDismissible: false);
   }
 
   bool isLogin() {
@@ -73,5 +85,15 @@ class AuthController extends GetxController {
 
   void navigateToLoginPage() {
     Get.toNamed(LoginScreen.routeName);
+  }
+
+  Future<void> signOut() async {
+    await auth.signOut();
+    navigateToHomePage();
+    print(auth.signOut());
+  }
+
+  void navigateToHomePage() {
+    Get.offAllNamed(HomeScreen.routeName);
   }
 }
