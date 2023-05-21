@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 import '../controllers/question_paper/question_papers/question_papers_controller.dart';
 import '../screens/introduction/introduction.dart';
+import '../screens/login/login_screen.dart';
 
 class AppRoutes {
   static List<GetPage> route() => [
@@ -22,6 +23,10 @@ class AppRoutes {
             binding: BindingsBuilder(() {
               Get.put(QuestionPaperController());
               Get.put(MyZoomDrawerController());
-            }))
+            })),
+        GetPage(
+          name: LoginScreen.routeName,
+          page: () => LoginScreen(),
+        ),
       ];
 }

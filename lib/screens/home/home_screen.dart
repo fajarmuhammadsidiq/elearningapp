@@ -27,6 +27,8 @@ class HomeScreen extends GetView<MyZoomDrawerController> {
     return Scaffold(body: GetBuilder<MyZoomDrawerController>(
       builder: (_) {
         return ZoomDrawer(
+          menuBackgroundColor: Color.fromARGB(255, 103, 179, 241),
+          menuScreenOverlayColor: Color.fromARGB(255, 103, 179, 241),
           menuScreenWidth: double.maxFinite,
           drawerShadowsBackgroundColor: Colors.white,
           slideWidth: MediaQuery.of(context).size.width * 0.6,

@@ -2,6 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 final firestore = FirebaseFirestore.instance;
 final questionPaperRF = firestore.collection('questionPapers');
+
+final userRF = firestore.collection("user ");
+
 DocumentReference questionRF({
   required String paperId,
   required String questionId,
